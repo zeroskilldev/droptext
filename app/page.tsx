@@ -7,7 +7,7 @@ export default function Home() {
         <div className="text-3xl my-10">
             Drop<strong>Text</strong>
         </div>
-        <div>
+        <div className="text-black/75 dark:text-white/75">
           Drop the text below to share temporarily
         </div>
         <div className="w-full">
