@@ -8,6 +8,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog"
+import { useState } from "react";
 
 
 type dropDialogProps = {
@@ -17,6 +18,9 @@ type dropDialogProps = {
 }
 
 export function DropDialog(props: dropDialogProps) {
+  const [ isCopied, setIsCopied ] = useState<boolean>(false);
+
+
   return (
     <Dialog open={props.open} onOpenChange={props.onOpenChange}>
       <DialogContent className="sm:max-w-sm">
@@ -33,14 +37,18 @@ export function DropDialog(props: dropDialogProps) {
               readOnly
               className="w-full rounded-md border px-3 py-2 text-sm"
             />
-            <div className="flex justify-center items-center mt-2">
-              <Button
-                onClick={() =>
-                  navigator.clipboard.writeText(props.dropLink!)
+            <div className="flex justify-center items-center my-4">
+              {!isCopied ? <Button
+                onClick={() => {
+                    navigator.clipboard.writeText(props.dropLink!);
+                    setIsCopied(true);
+                  }
                 }
               >
                 Copy Link
-              </Button>
+              </Button> :
+                <Button disabled>Copied</Button>
+              }
             </div>
           </div>
         )}
