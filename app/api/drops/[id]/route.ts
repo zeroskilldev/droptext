@@ -9,9 +9,6 @@ export async function GET(req: Request, { params }: ParamsType) {
 
   console.log(id);
 
-  // return Response.json({
-  //   id: id
-  // })
 
   const currentTime = new Date();
   const response = await prisma.drop.findUnique({
