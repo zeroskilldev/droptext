@@ -8,7 +8,7 @@ export async function POST(req: Request) {
   const url = new URL(req.url);
   const dropLink = `${url.origin}/drop/${shortId}`;
 
-  const expireTime = new Date(Date.now() + 5 * 60 * 60 * 1000);
+  const expireTime = new Date(Date.now() + 30 * 60 * 60 * 1000);
   const drop = await prisma.drop.create({
     data: {
       shortId,
