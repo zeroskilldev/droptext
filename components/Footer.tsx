@@ -2,7 +2,7 @@ export const Footer = () => {
   return (
     <div className="flex items-center justify-center border-t py-4 px-25 gap-4">
       <div>
-        Text<strong>Drop</strong>
+        Drop<strong>Text</strong>
       </div>
       <div>
         |
