@@ -8,7 +8,7 @@ export const Footer = () => {
         |
       </div>
       <div>
-        Made with 💙
+        Made with 💙 by zeroskilldev
       </div>
     </div>
   )
